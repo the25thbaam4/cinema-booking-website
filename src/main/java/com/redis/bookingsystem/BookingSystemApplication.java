@@ -41,7 +41,10 @@ public class BookingSystemApplication {
 			schedule.setMovie(movie2);
 			schedule.setPlayingTime(LocalDateTime.now());
 			scheduleRepo.save(schedule);
-
+			var schedule2 = new Schedule();
+			schedule2.setMovie(movie);
+			schedule2.setPlayingTime(LocalDateTime.of(2023,05,31,18,45));
+			scheduleRepo.save(schedule2);
 		}
 	}
 
