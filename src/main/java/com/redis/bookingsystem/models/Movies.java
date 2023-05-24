@@ -19,7 +19,7 @@ public class Movies {
         private String name;
         private Integer yearOfRelease;
 
- /*   @ManyToOne
+  /* @ManyToOne
     private List<Schedule> schedules;
 
     public List<Schedule> getSchedules() {
@@ -28,8 +28,8 @@ public class Movies {
 
     public void setSchedules(List<Schedule> schedules) {
         this.schedules = schedules;
-    }*/
-
+    }
+*/
         public Long getId() {
             return id;
         }
