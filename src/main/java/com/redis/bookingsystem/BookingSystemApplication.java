@@ -24,7 +24,7 @@ public class BookingSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookingSystemApplication.class, args);
 	}
-	@Component
+	/*@Component
 	class DummyDataGenerator implements CommandLineRunner {
 
 
@@ -38,6 +38,8 @@ public class BookingSystemApplication {
 		private UserRepo userRepo;
 		@Autowired
 		private ReservationRepo reservationRepo;
+
+
 
 		@Override public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
@@ -79,7 +81,7 @@ public class BookingSystemApplication {
 
 
 
-		}
+		}*/
 	}
 
-}
+
