@@ -8,10 +8,13 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_reservation", nullable = false)
     private long user_reservation;
-
+    @ManyToOne
+    private User user;
  /*   @ManyToOne
     @JoinColumn (name = "reservation_id")
-    private User user;
+
+  */
+
     public long getUser_reservation() {
         return user_reservation;
     }
@@ -28,5 +31,5 @@ public class Reservation {
         this.user = user;
     }
 
-*/
- }
+
+}
