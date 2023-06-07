@@ -44,11 +44,11 @@ public class BookingSystemApplication {
 		@Override
 		public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
-			var movie = new Movies();
+			var movie = new Movie();
 			movie.setName("arielle");
 			movie.setYearOfRelease(2020);
 			repository.save(movie);
-			var movie2 = new Movies();
+			var movie2 = new Movie();
 			movie2.setName("supermann");
 			movie2.setYearOfRelease(2010);
 			repository.save(movie2);
@@ -74,7 +74,7 @@ public class BookingSystemApplication {
 			reservationRepo.save(reservation);
 
 
-			var movie3 = new Movies();
+			var movie3 = new Movie();
 
 			movie3.setYearOfRelease(2012);
 			movie3.setName("some movie");

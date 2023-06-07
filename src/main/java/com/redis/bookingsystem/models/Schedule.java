@@ -15,15 +15,15 @@ public class Schedule {
     @Column(name = "id", nullable = false) private Long id;
 
     @OneToOne()
-    private Movies movie;
+    private Movie movie;
 
     private LocalDateTime playingTime;
 
-    public Movies getMovie() {
+    public Movie getMovie() {
         return movie;
     }
 
-    public void setMovie(Movies movie) {
+    public void setMovie(Movie movie) {
         this.movie = movie;
     }
 
