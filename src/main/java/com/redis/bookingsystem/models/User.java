@@ -25,7 +25,7 @@ public class User {
         this.id = id;
     }
 
-   private String userName;
+   private String username;
     private int age;
 
  /*   @OneToMany (mappedBy = "user")
@@ -42,11 +42,11 @@ public class User {
 
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.username = username;
     }
 
     public int getAge() {

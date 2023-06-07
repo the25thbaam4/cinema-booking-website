@@ -24,11 +24,12 @@ public class BookingSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookingSystemApplication.class, args);
 	}
-	/*@Component
+
+	@Component
 	class DummyDataGenerator implements CommandLineRunner {
 
 
-		private List<Schedule>schedules;
+		private List<Schedule> schedules;
 		@Autowired
 		private MovieRepository repository;
 
@@ -40,8 +41,8 @@ public class BookingSystemApplication {
 		private ReservationRepo reservationRepo;
 
 
-
-		@Override public void run(String... args) throws Exception {
+		@Override
+		public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
 			var movie = new Movies();
 			movie.setName("arielle");
@@ -80,8 +81,8 @@ public class BookingSystemApplication {
 			repository.save(movie3);
 
 
-
-		}*/
+		}
 	}
+}
 
 
