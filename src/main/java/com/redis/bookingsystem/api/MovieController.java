@@ -2,10 +2,8 @@ package com.redis.bookingsystem.api;
 
 import com.redis.bookingsystem.models.Movies;
 import com.redis.bookingsystem.repositories.MovieRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/movies")
@@ -18,11 +16,16 @@ public class MovieController {
         this.movieRepository = movieRepository;
     }
 
-    @GetMapping("/movie/{movie}")
+    @GetMapping("/movie/{id}")
     @ResponseBody
-    public Movies getMovies(){
-        var movie = n
+    public ResponseEntity<Movies> getMovieById(@PathVariable("id") Long id)
+    {
+        var movie = movieRepository.findById(id);
+        return ResponseEntity.of(movie);
+
     }
+
+
 
 
 }

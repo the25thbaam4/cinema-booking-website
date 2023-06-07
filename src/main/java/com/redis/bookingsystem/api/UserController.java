@@ -19,7 +19,7 @@ public class UserController {
         return ResponseEntity.of(user);
     }
 
-    @GetMapping({"/name/{name}","/name/"})
+    @GetMapping({"/name/{name}","/name/", "/name"})
     @ResponseBody
     public String getUserName(@PathVariable(name="name", required=false) String name) {
       if (name==null){
