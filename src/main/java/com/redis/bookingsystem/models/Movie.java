@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class Movie {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        @Column(name = "id", nullable = false)
+        @Column(name = "movie_id", nullable = false)
         private Long id;
 
         private String name;

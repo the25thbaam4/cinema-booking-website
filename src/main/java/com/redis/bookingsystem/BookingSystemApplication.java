@@ -1,10 +1,7 @@
 package com.redis.bookingsystem;
 
 import com.redis.bookingsystem.models.*;
-import com.redis.bookingsystem.repositories.MovieRepository;
-import com.redis.bookingsystem.repositories.ReservationRepo;
-import com.redis.bookingsystem.repositories.ScheduleRepo;
-import com.redis.bookingsystem.repositories.UserRepo;
+import com.redis.bookingsystem.repositories.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
@@ -31,7 +28,7 @@ public class BookingSystemApplication {
 
 		private List<Schedule> schedules;
 		@Autowired
-		private MovieRepository repository;
+		private MovieRepo repository;
 
 		@Autowired
 		private ScheduleRepo scheduleRepo;
@@ -39,6 +36,10 @@ public class BookingSystemApplication {
 		private UserRepo userRepo;
 		@Autowired
 		private ReservationRepo reservationRepo;
+		@Autowired
+		private TheaterRepo theaterRepo;
+		@Autowired
+		private HallRepo hallRepo;
 
 
 		@Override
@@ -62,9 +63,10 @@ public class BookingSystemApplication {
 			scheduleRepo.save(schedule2);
 
 			var user1 = new User();
-			user1.setUserName("Guy Asdasd");
-			user1.setAge(29);
+			user1.setUsername("Guy Temp");
+			user1.setAge(30);
 			userRepo.save(user1);
+
 
 			schedules.add(schedule);
 			schedules.add(schedule2);
@@ -80,8 +82,26 @@ public class BookingSystemApplication {
 			movie3.setName("some movie");
 			repository.save(movie3);
 
+			var user2 = new User();
+			user2.setUsername("another guy");
+			user2.setAge(29);
+			userRepo.save(user2);
+
+
+			var hall1 = new Hall();
+			hall1.setColumn(1);
+			hall1.setRow(2);
+			hallRepo.save(hall1);
+
+
+			var hall2 = new Hall();
+			hall2.setRow(5);
+			hall2.setColumn(6);
+			hallRepo.save(hall2);
+
 
 		}
+
 	}
 }
 

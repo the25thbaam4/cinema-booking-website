@@ -17,16 +17,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id", nullable = false)
     private Integer id;
+
+    private String username;
+    private int age;
+
     public int getId() {
         return id;
     }
+
 
     public void setId(int id) {
         this.id = id;
     }
 
-   private String username;
-    private int age;
+
+
 
  /*   @OneToMany (mappedBy = "user")
     private Set<Reservation> reservations ;
@@ -45,7 +50,7 @@ public class User {
         return username;
     }
 
-    public void setUserName(String userName) {
+    public void setUsername(String username) {
         this.username = username;
     }
 

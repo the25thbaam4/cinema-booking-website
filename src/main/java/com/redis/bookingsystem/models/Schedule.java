@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Schedule {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false) private Long id;
+    @Column(name = "schedule_id", nullable = false) private Long id;
 
     @OneToOne()
     private Movie movie;
