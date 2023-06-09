@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.of(user);
     }
 
-    @GetMapping({"/name/{name}","/name/", "/name"})
+ /*   @GetMapping({"/name/{name}","/name/", "/name"})
     @ResponseBody
     public String getUserName(@PathVariable(name="name", required=false) String name) {
       if (name==null){
@@ -30,11 +30,10 @@ public class UserController {
       }
         return "Hello " + name +" noiceeee";
     }
- /*   public ResponseEntity <User> getUserByName(@PathVariable ("name") String name){
+*/
+  /*    public ResponseEntity <User> getUserByName(@PathVariable ("name") String name){
         var us1 = new User();
-        us1.setUserName(name);
         var res = userRepo.save(us1);
-
         return ResponseEntity.notFound().build();
     }
 */
