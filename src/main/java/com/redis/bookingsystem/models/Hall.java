@@ -1,6 +1,11 @@
 package com.redis.bookingsystem.models;
 
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.GenerationType;
 
 @Entity
 public class Hall {
@@ -9,8 +14,8 @@ public class Hall {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hall_id", nullable = false)
     private Integer id;
-    private int row;
-    private int column;
+    private int hallRow;
+    private int hallColumn;
 
 
     public Integer getId() {
@@ -21,20 +26,20 @@ public class Hall {
         this.id = id;
     }
 
-    public int getRow() {
-        return row;
+    public int getHallRow() {
+        return hallRow;
     }
 
-    public void setRow(int row) {
-        this.row = row;
+    public void setHallRow(int hallRow) {
+        this.hallRow = hallRow;
     }
 
-    public int getColumn() {
-        return column;
+    public int getHallColumn() {
+        return hallColumn;
     }
 
-    public void setColumn(int column) {
-        this.column = column;
+    public void setHallColumn(int hallColumn) {
+        this.hallColumn = hallColumn;
     }
 
 

@@ -38,6 +38,7 @@ public class BookingSystemApplication {
 		private ReservationRepo reservationRepo;
 		@Autowired
 		private TheaterRepo theaterRepo;
+
 		@Autowired
 		private HallRepo hallRepo;
 
@@ -89,15 +90,17 @@ public class BookingSystemApplication {
 
 
 			var hall1 = new Hall();
-			hall1.setColumn(1);
-			hall1.setRow(2);
+			hall1.setHallColumn(1);
+			hall1.setHallRow(2);
 			hallRepo.save(hall1);
 
 
 			var hall2 = new Hall();
-			hall2.setRow(5);
-			hall2.setColumn(6);
+			hall2.setHallColumn(4);
+			hall2.setHallRow(6);
 			hallRepo.save(hall2);
+
+
 
 
 		}

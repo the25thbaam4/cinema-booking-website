@@ -1,5 +1,5 @@
 package com.redis.bookingsystem.api;
-
+/*
 import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.repositories.HallRepo;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +29,6 @@ public class HallController {
     public List<Hall> getAllHall(){
         return hallRepo.findAll();
     }
-
-
 }
+*/
+
