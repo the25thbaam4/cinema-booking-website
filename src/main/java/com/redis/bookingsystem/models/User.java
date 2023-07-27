@@ -1,6 +1,9 @@
 package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@Entity
+@Entity @Getter @Setter @ToString
 @Table(name = "cinema_user")
 public class User {
 
@@ -44,23 +47,6 @@ public class User {
         this.id_nr = id_nr;
     }
 */
-
-
-    public String getUserName() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
 
     }
