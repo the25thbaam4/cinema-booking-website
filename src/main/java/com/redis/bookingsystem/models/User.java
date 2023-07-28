@@ -4,11 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @Entity @Getter @Setter @ToString
@@ -24,14 +19,7 @@ public class User {
     private String username;
     private int age;
 
-    public int getId() {
-        return id;
-    }
 
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
 
 

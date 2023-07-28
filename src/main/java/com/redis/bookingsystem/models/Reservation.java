@@ -1,8 +1,10 @@
 package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
+@Entity @Getter @Setter
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,21 +17,7 @@ public class Reservation {
 
   */
 
-    public long getUser_reservation() {
-        return user_reservation;
-    }
 
-    public void setUser_reservation(long user_reservation) {
-        this.user_reservation = user_reservation;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
 
 }
