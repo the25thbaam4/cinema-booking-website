@@ -12,12 +12,5 @@ public class Reservation {
     private long user_reservation;
     @ManyToOne
     private User user;
- /*   @ManyToOne
-    @JoinColumn (name = "reservation_id")
-
-  */
-
-
-
 
 }

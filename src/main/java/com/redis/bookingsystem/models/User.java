@@ -14,27 +14,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     private String username;
     private int age;
-
-
-
-
-
-
- /*   @OneToMany (mappedBy = "user")
-    private Set<Reservation> reservations ;
-
-    public long getId_nr() {
-        return id_nr;
-    }
-
-    public void setId_nr(long id_nr) {
-        this.id_nr = id_nr;
-    }
-*/
 
 
     }

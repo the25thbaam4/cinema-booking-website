@@ -17,7 +17,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) {
+    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
         var user = userRepo.findById(id);
         return ResponseEntity.of(user);
     }
