@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.models;
 
+<<<<<<< HEAD
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,3 +22,7 @@ public class Seat {
    // private Hall hall;
 
 
+=======
+public class Seat {
+}
+>>>>>>> parent of 2b141a1 (updated)
