@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -16,8 +17,7 @@ public class Seat {
     @Column(name = "hall_nr", nullable = false)
     private Long id;
     private int number;
-    private int row;
   // @ManyToOne
    // private Hall hall;
 
-}
+
