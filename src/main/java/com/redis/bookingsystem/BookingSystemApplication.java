@@ -40,13 +40,15 @@ public class BookingSystemApplication {
 
 		@Autowired
 		private HallRepo hallRepo;
+<<<<<<< HEAD
 		//@Autowired
 		//private OrderRepo orderRepo;
+=======
+>>>>>>> parent of 1c6634e (added order between user and reservation)
 
 
 		@Override
 		public void run(String... args) throws Exception {
-
 			schedules = new ArrayList<>();
 			var movie = new Movie();
 			movie.setName("arielle");
@@ -75,7 +77,7 @@ public class BookingSystemApplication {
 			schedules.add(schedule2);
 			var reservation = new Reservation();
 			reservation.setUser(user1);
-			reservation.setUser_reservation(1);
+			reservation.setUser_reservation(202305);
 			reservationRepo.save(reservation);
 
 
@@ -100,11 +102,16 @@ public class BookingSystemApplication {
 
 			hallRepo.save(hall2);
 
+<<<<<<< HEAD
 			var order1 = new Order();
 			order1.setUser(user1);
 			order1.setReservation(reservation);
 			orderRepo.save(order1);
 				*/
+=======
+
+
+>>>>>>> parent of 1c6634e (added order between user and reservation)
 
 		}
 

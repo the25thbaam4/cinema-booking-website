@@ -7,7 +7,7 @@ import lombok.Data;
 @Entity @Data
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_reservation", nullable = false)
     private long user_reservation;
     @ManyToOne
