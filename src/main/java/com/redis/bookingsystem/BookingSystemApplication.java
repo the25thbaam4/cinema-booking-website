@@ -36,13 +36,12 @@ public class BookingSystemApplication {
 		private UserRepo userRepo;
 		@Autowired
 		private ReservationRepo reservationRepo;
-		@Autowired
-		private TheaterRepo theaterRepo;
+
 
 		@Autowired
 		private HallRepo hallRepo;
-		@Autowired
-		private OrderRepo orderRepo;
+		//@Autowired
+		//private OrderRepo orderRepo;
 
 
 		@Override
@@ -92,22 +91,20 @@ public class BookingSystemApplication {
 			userRepo.save(user2);
 
 
-			var hall1 = new Hall();
-			hall1.setHallColumn(1);
-			hall1.setHallRow(2);
+			/*var hall1 = new Hall();
+
 			hallRepo.save(hall1);
 
 
 			var hall2 = new Hall();
-			hall2.setHallColumn(4);
-			hall2.setHallRow(6);
+
 			hallRepo.save(hall2);
 
 			var order1 = new Order();
 			order1.setUser(user1);
 			order1.setReservation(reservation);
 			orderRepo.save(order1);
-
+				*/
 
 		}
 

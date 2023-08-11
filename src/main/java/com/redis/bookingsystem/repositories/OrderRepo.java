@@ -1,7 +1,8 @@
-package com.redis.bookingsystem.repositories;
+/*package com.redis.bookingsystem.repositories;
 
 import com.redis.bookingsystem.models.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepo extends JpaRepository<Order, Long> {
 }
+*/

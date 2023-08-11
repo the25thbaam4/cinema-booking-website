@@ -1,10 +1,10 @@
 package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Entity @Getter @Setter
+
+@Entity @Data
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,5 +12,7 @@ public class Reservation {
     private long user_reservation;
     @ManyToOne
     private User user;
+
+   // private Order order;
 
 }

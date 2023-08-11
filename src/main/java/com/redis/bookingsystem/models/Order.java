@@ -1,15 +1,15 @@
-package com.redis.bookingsystem.models;
+/*package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Entity @Getter @Setter
+
+@Entity @Data
 @Table(name = "cinema_order")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id", nullable = false)
     private long id;
 
@@ -21,3 +21,4 @@ public class Order {
     private User user;
 
 }
+*/

@@ -8,30 +8,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+
 public class Schedule {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "schedule_id", nullable = false) private Long id;
-
-    @OneToOne()
-    private Movie movie;
-
+    @Column(name = "schedule_id", nullable = false)
+    private Long id;
     private LocalDateTime playingTime;
+    private Movie movie;
+   // private Hall hall;
 
-    public Movie getMovie() {
-        return movie;
-    }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
-
-    public LocalDateTime getPlayingTime() {
-        return playingTime;
-    }
-
-    public void setPlayingTime(LocalDateTime playingTime) {
-        this.playingTime = playingTime;
-    }
 }

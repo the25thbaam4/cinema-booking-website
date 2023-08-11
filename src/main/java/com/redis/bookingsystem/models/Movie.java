@@ -6,11 +6,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity @Getter @Setter @ToString
+@Entity @Getter @Setter
 public class Movie {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
