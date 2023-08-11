@@ -41,10 +41,13 @@ public class BookingSystemApplication {
 
 		@Autowired
 		private HallRepo hallRepo;
+		@Autowired
+		private OrderRepo orderRepo;
 
 
 		@Override
 		public void run(String... args) throws Exception {
+
 			schedules = new ArrayList<>();
 			var movie = new Movie();
 			movie.setName("arielle");
@@ -73,7 +76,7 @@ public class BookingSystemApplication {
 			schedules.add(schedule2);
 			var reservation = new Reservation();
 			reservation.setUser(user1);
-			reservation.setUser_reservation(202305);
+			reservation.setUser_reservation(1);
 			reservationRepo.save(reservation);
 
 
@@ -100,7 +103,10 @@ public class BookingSystemApplication {
 			hall2.setHallRow(6);
 			hallRepo.save(hall2);
 
-
+			var order1 = new Order();
+			order1.setUser(user1);
+			order1.setReservation(reservation);
+			orderRepo.save(order1);
 
 
 		}
