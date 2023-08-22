@@ -40,11 +40,8 @@ public class BookingSystemApplication {
 
 		@Autowired
 		private HallRepo hallRepo;
-<<<<<<< HEAD
 		//@Autowired
 		//private OrderRepo orderRepo;
-=======
->>>>>>> parent of 1c6634e (added order between user and reservation)
 
 
 		@Override
@@ -108,10 +105,8 @@ public class BookingSystemApplication {
 			order1.setReservation(reservation);
 			orderRepo.save(order1);
 				*/
-=======
 
 
->>>>>>> parent of 1c6634e (added order between user and reservation)
 
 		}
 

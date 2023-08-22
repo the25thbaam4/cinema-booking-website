@@ -1,6 +1,5 @@
 package com.redis.bookingsystem.models;
 
-<<<<<<< HEAD
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,11 +17,8 @@ public class Seat {
     @Column(name = "hall_nr", nullable = false)
     private Long id;
     private int number;
-  // @ManyToOne
-   // private Hall hall;
+    // @ManyToOne
+    // private Hall hall;
 
 
-=======
-public class Seat {
 }
->>>>>>> parent of 2b141a1 (updated)
