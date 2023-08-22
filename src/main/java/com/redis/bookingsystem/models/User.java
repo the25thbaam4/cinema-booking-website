@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 
 @Entity @Getter @Setter @ToString
 @Table(name = "cinema_user")
@@ -18,7 +20,13 @@ public class User {
 
     private String username;
     private int age;
-    //private Order order;
+
+    @OneToMany
+    private List<Order> orders;
+
+    @OneToMany
+    private List<Reservation> reservation;
+
 
 
     }

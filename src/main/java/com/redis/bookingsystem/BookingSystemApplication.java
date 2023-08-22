@@ -2,6 +2,7 @@ package com.redis.bookingsystem;
 
 import com.redis.bookingsystem.models.*;
 import com.redis.bookingsystem.repositories.*;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
@@ -41,15 +42,15 @@ public class BookingSystemApplication {
 		@Autowired
 		private HallRepo hallRepo;
 		//@Autowired
-		//private OrderRepo orderRepo;
+		private OrderRepo orderRepo;
 		//@Autowired
 		private List<Seat> seats;
 
-
+		private List <Order> orders;
 		@Override
 		public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
-
+			orders = new ArrayList<>();
 			var movie = new Movie();
 			movie.setName("arielle");
 			movie.setYearOfRelease(2020);
@@ -116,12 +117,11 @@ public class BookingSystemApplication {
 
 			hall2.getSeats().add(seat1);
 
-			/*
+
 			var order1 = new Order();
-			order1.setUser(user1);
+
 			order1.setReservation(reservation);
-			orderRepo.save(order1);
-				*/
+			orders.add(order1);
 
 
 

@@ -20,5 +20,7 @@ public class Seat {
      @JoinColumn(name = "hall_id")
      private Hall hall;
 
+     @ManyToOne
+    private Reservation reservation;
 
 }
