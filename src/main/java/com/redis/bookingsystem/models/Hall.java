@@ -6,10 +6,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter
+@Data
 public class Hall {
 
     @Id
@@ -17,8 +18,8 @@ public class Hall {
     @Column(name = "hall_id", nullable = false)
     private Integer id;
 
-   // @OneToMany
-    //private List<Seat> seats;
+    @OneToMany
+    private List<Seat> seats = new ArrayList<>();
 
 
 

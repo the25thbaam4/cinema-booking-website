@@ -90,7 +90,7 @@ public class BookingSystemApplication {
 			userRepo.save(user2);
 
 
-			/*var hall1 = new Hall();
+			var hall1 = new Hall();
 
 			hallRepo.save(hall1);
 
@@ -99,7 +99,7 @@ public class BookingSystemApplication {
 
 			hallRepo.save(hall2);
 
-<<<<<<< HEAD
+			/*
 			var order1 = new Order();
 			order1.setUser(user1);
 			order1.setReservation(reservation);
