@@ -1,0 +1,232 @@
+@startuml
+
+/' diagram metadata start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.redis.bookingsystem.models.User",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram metadata end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_108389755 { 
+   	label=redis
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_224165739 { 
+   	label=bookingsystem
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   DummyDataGenerator1859619090[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DummyDataGenerator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hallRepo: HallRepo [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   orderRepo: OrderRepo [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   orders: List&lt;Order&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   repository: MovieRepo [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservationRepo: ReservationRepo [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   scheduleRepo: ScheduleRepo [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   schedules: List&lt;Schedule&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seats: List&lt;Seat&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRepo: UserRepo [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ run(args: String...)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Hall1339996560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Hall</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hallname: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seats: List&lt;Seat&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Order1339996560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Order</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   id: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   orderNumber: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservation: Reservation [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   user: User [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Reservation1339996560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Reservation</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   reservationNumber: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seatList: List&lt;Seat&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   user: User [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   user_reservation: long [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Seat1339996560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Seat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hall: Hall [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservation: Reservation [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   seatNumber: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+User1339996560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)User</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   age: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Long [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   orders: List&lt;Order&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reservation: List&lt;Reservation&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   username: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+DummyDataGenerator1859619090 -> Order1339996560[label="orders
+[0..*]"];
+DummyDataGenerator1859619090 -> Seat1339996560[label="seats
+[0..*]"];
+Hall1339996560 -> Seat1339996560[label="seats
+[0..*]"];
+Order1339996560 -> Reservation1339996560[label="reservation
+[0..1]"];
+Order1339996560 -> User1339996560[label="user
+[0..1]"];
+Reservation1339996560 -> Seat1339996560[label="seatList
+[0..*]"];
+Reservation1339996560 -> User1339996560[label="user
+[0..1]"];
+Seat1339996560 -> Hall1339996560[label="hall
+[0..1]"];
+Seat1339996560 -> Reservation1339996560[label="reservation
+[0..1]"];
+User1339996560 -> Order1339996560[label="orders
+[0..*]"];
+User1339996560 -> Reservation1339996560[label="reservation
+[0..*]"];
+    
+}
+@enduml
