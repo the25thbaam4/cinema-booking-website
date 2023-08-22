@@ -42,23 +42,29 @@ public class BookingSystemApplication {
 		private HallRepo hallRepo;
 		//@Autowired
 		//private OrderRepo orderRepo;
+		//@Autowired
+		private List<Seat> seats;
 
 
 		@Override
 		public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
+
 			var movie = new Movie();
 			movie.setName("arielle");
 			movie.setYearOfRelease(2020);
 			repository.save(movie);
+
 			var movie2 = new Movie();
 			movie2.setName("supermann");
 			movie2.setYearOfRelease(2010);
 			repository.save(movie2);
+
 			var schedule = new Schedule();
 			schedule.setMovie(movie2);
 			schedule.setPlayingTime(LocalDateTime.now());
 			scheduleRepo.save(schedule);
+
 			var schedule2 = new Schedule();
 			schedule2.setMovie(movie);
 			schedule2.setPlayingTime(LocalDateTime.now());
@@ -91,13 +97,24 @@ public class BookingSystemApplication {
 
 
 			var hall1 = new Hall();
-
+			hall1.setHallname("action");
 			hallRepo.save(hall1);
 
 
 			var hall2 = new Hall();
-
+			hall2.setHallname("comedy");
 			hallRepo.save(hall2);
+
+			var seat1 = new Seat();
+			seat1.setSeatNumber(12);
+
+			var seat2 = new Seat();
+			seat2.setSeatNumber(94);
+
+			seats = new ArrayList<>();
+			seats.add(seat1);
+
+			hall2.getSeats().add(seat1);
 
 			/*
 			var order1 = new Order();

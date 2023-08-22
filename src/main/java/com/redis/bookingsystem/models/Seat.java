@@ -8,14 +8,14 @@ import lombok.Setter;
 
 @Entity
 @Data
-@Table(name = "hall_seat")
+@Table(name = "seat")
 public class Seat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "hall_nr", nullable = false)
+    @Column(name = "seat_id", nullable = false)
     private Long id;
-    private int number;
+    private int seatNumber;
      @ManyToOne
      @JoinColumn(name = "hall_id")
      private Hall hall;

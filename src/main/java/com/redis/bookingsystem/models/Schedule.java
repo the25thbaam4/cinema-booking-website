@@ -1,11 +1,9 @@
 package com.redis.bookingsystem.models;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -17,7 +15,7 @@ public class Schedule {
     private LocalDateTime playingTime;
     @ManyToOne
     private Movie movie;
-   // private Hall hall;
+
 
 
 }

@@ -1,5 +1,8 @@
 package com.redis.bookingsystem.repositories;
 
 
-public interface SeatRepo{
+import com.redis.bookingsystem.models.Seat;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SeatRepo extends JpaRepository<Seat, Long> {
 }
