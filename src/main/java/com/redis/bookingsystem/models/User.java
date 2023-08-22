@@ -1,14 +1,11 @@
 package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.Data;
 import java.util.List;
 
 
-@Entity @Getter @Setter @ToString
+@Entity @Data
 @Table(name = "cinema_user")
 public class User {
 
@@ -25,7 +22,7 @@ public class User {
     private List<Order> orders;
 
     @OneToMany
-    private List<Reservation> reservation;
+    private List <Reservation> reservation;
 
 
 
