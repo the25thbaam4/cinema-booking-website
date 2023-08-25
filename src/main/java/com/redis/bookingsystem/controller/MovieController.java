@@ -1,4 +1,4 @@
-package com.redis.bookingsystem.api;
+package com.redis.bookingsystem.controller;
 
 import com.redis.bookingsystem.models.Movie;
 import com.redis.bookingsystem.repositories.MovieRepo;

@@ -1,4 +1,4 @@
-package com.redis.bookingsystem.api;
+package com.redis.bookingsystem.controller;
 
 import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.repositories.HallRepo;
