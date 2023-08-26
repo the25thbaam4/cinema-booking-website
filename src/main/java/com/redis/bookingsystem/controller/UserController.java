@@ -13,10 +13,11 @@ public class UserController {
     private final UserRepo userRepo;
 
     public UserController(UserRepo repo) {
-        userRepo = repo;
+        this.userRepo = repo;
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
         var user = userRepo.findById(id);
         return ResponseEntity.of(user);

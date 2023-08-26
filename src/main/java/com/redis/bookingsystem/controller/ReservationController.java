@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Reservations")
+@RequestMapping("/reservations")
 public class ReservationController {
     private ReservationRepo reservationRepo;
 
@@ -21,7 +21,7 @@ public class ReservationController {
             return ResponseEntity.of(reservation);
         }
 
-        @GetMapping
+        @GetMapping("/")
         public List<Reservation> getAllReservations(){
             return reservationRepo.findAll();
         }

@@ -19,15 +19,15 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
+
     public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id)
     {
         var movie = movieRepo.findById(id);
         return ResponseEntity.of(movie);
     }
 
-    @GetMapping
-    @ResponseBody
+    @GetMapping("/")
+
     public List<Movie> getAllMovies(){
 
         return movieRepo.findAll();

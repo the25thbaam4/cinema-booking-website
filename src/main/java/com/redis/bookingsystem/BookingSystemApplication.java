@@ -26,9 +26,10 @@ public class BookingSystemApplication {
 	class DummyDataGenerator implements CommandLineRunner {
 
 
+
 		private List<Schedule> schedules;
 		@Autowired
-		private MovieRepo repository;
+		private MovieRepo movieRepo;
 
 		@Autowired
 		private ScheduleRepo scheduleRepo;
@@ -48,72 +49,38 @@ public class BookingSystemApplication {
 		private List <Order> orders;
 		@Override
 		public void run(String... args) throws Exception {
-			schedules = new ArrayList<>();
-
-			orders = new ArrayList<>();
-			var movie = new Movie();
-			movie.setName("arielle");
-			movie.setYearOfRelease(2020);
-			repository.save(movie);
-
-			var movie2 = new Movie();
-			movie2.setName("supermann");
-			movie2.setYearOfRelease(2010);
-			repository.save(movie2);
-
-			var schedule = new Schedule();
-			schedule.setMovie(movie2);
-			schedule.setPlayingTime(LocalDateTime.now());
-			scheduleRepo.save(schedule);
-
-			var schedule2 = new Schedule();
-			schedule2.setMovie(movie);
-			schedule2.setPlayingTime(LocalDateTime.now());
-			scheduleRepo.save(schedule2);
 
 			var user1 = new User();
 			user1.setUsername("Guy Temp");
 			user1.setAge(30);
 			userRepo.save(user1);
 
-
-			schedules.add(schedule);
-			schedules.add(schedule2);
-
-
-
-			var movie3 = new Movie();
-
-			movie3.setYearOfRelease(2012);
-			movie3.setName("some movie");
-			repository.save(movie3);
-
-			var user2 = new User();
-			user2.setUsername("another guy");
-			user2.setAge(29);
-			userRepo.save(user2);
+			var movie = new Movie();
+			movie.setName("arielle");
+			movie.setYearOfRelease(2020);
+			movie.setSchedules(schedules);
+			movieRepo.save(movie);
 
 
 
-
-
-
-
-			var seat1 = new Seat();
-			seat1.setSeatRow(12);
-
-			var seat2 = new Seat();
-			seat2.setSeatRow(94);
-
-			seats = new ArrayList<>();
-			seats.add(seat1);
-
-
-
+			var hall1 = new Hall();
+			hall1.setHallName("animation");
+			hallRepo.save(hall1);
 
 			var order1 = new Order();
+			order1.setUser(user1);
 
 
+			var schedule2 = new Schedule();
+			schedule2.setMovie(movie);
+			schedule2.setPlayingTime(LocalDateTime.of(2023,9,5,19,00));
+			schedule2.setHall(hall1);
+			scheduleRepo.save(schedule2);
+
+
+			schedules = new ArrayList<>();
+			orders = new ArrayList<>();
+			schedules.add(schedule2);
 
 		}
 
