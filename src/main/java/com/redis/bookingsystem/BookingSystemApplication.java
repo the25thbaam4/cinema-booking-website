@@ -2,7 +2,6 @@ package com.redis.bookingsystem;
 
 import com.redis.bookingsystem.models.*;
 import com.redis.bookingsystem.repositories.*;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
@@ -107,10 +106,10 @@ public class BookingSystemApplication {
 			hallRepo.save(hall2);
 
 			var seat1 = new Seat();
-			seat1.setSeatNumber(12);
+			seat1.setSeatRow(12);
 
 			var seat2 = new Seat();
-			seat2.setSeatNumber(94);
+			seat2.setSeatRow(94);
 
 			seats = new ArrayList<>();
 			seats.add(seat1);
