@@ -9,7 +9,7 @@ import java.util.List;
 @Entity @Data
 public class Movie {
 
-    @Id
+        @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Column(name = "movie_id", nullable = false)
         private Long id;
@@ -17,8 +17,9 @@ public class Movie {
         private String name;
         private Integer yearOfRelease;
 
-   @OneToMany
-    private List<Schedule> schedules;
+        @OneToMany
+        @JoinColumn(name = "timetable_id")
+        private List<Schedule> schedules;
 
 
 

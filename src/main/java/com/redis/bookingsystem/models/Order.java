@@ -3,9 +3,10 @@ package com.redis.bookingsystem.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 
 @Entity @Data
-@Table(name = "order")
 public class Order {
 
     @Id
@@ -14,11 +15,11 @@ public class Order {
     private long id;
     private long orderNumber;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
+    private List<Reservation> reservation;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
 }

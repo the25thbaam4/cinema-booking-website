@@ -19,10 +19,10 @@ public class User {
     private int age;
 
     @OneToMany
+    @JoinColumn(name = "order_id")
     private List<Order> orders;
 
-    @OneToMany
-    private List <Reservation> reservation;
+
 
 
 

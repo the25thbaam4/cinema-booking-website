@@ -4,8 +4,6 @@ package com.redis.bookingsystem.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,10 +13,17 @@ public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hall_id", nullable = false)
-    private Integer id;
-    private String hallname;
+    private int id;
+
+    private String hallName;
+
     @OneToMany
-    private List<Seat> seats = new ArrayList<>();
+    @JoinColumn(name = "seat_id")
+    private List<Seat> seats;
+
+    @OneToMany
+    @JoinColumn(name = "timetable_id")
+    private List<Schedule> schedules;
 
 
 

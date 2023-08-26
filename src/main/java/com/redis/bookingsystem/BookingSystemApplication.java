@@ -49,6 +49,7 @@ public class BookingSystemApplication {
 		@Override
 		public void run(String... args) throws Exception {
 			schedules = new ArrayList<>();
+
 			orders = new ArrayList<>();
 			var movie = new Movie();
 			movie.setName("arielle");
@@ -78,10 +79,7 @@ public class BookingSystemApplication {
 
 			schedules.add(schedule);
 			schedules.add(schedule2);
-			var reservation = new Reservation();
-			reservation.setUser(user1);
-			reservation.setUser_reservation(202305);
-			reservationRepo.save(reservation);
+
 
 
 			var movie3 = new Movie();
@@ -96,14 +94,10 @@ public class BookingSystemApplication {
 			userRepo.save(user2);
 
 
-			var hall1 = new Hall();
-			hall1.setHallname("action");
-			hallRepo.save(hall1);
 
 
-			var hall2 = new Hall();
-			hall2.setHallname("comedy");
-			hallRepo.save(hall2);
+
+
 
 			var seat1 = new Seat();
 			seat1.setSeatRow(12);
@@ -114,13 +108,10 @@ public class BookingSystemApplication {
 			seats = new ArrayList<>();
 			seats.add(seat1);
 
-			hall2.getSeats().add(seat1);
+
 
 
 			var order1 = new Order();
-
-			order1.setReservation(reservation);
-			orders.add(order1);
 
 
 
