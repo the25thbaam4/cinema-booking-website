@@ -27,7 +27,7 @@ public class BookingSystemApplication {
 
 
 
-		private List<Schedule> schedules;
+
 		@Autowired
 		private MovieRepo movieRepo;
 
@@ -38,17 +38,29 @@ public class BookingSystemApplication {
 		@Autowired
 		private ReservationRepo reservationRepo;
 
-
 		@Autowired
 		private HallRepo hallRepo;
-		//@Autowired
+		@Autowired
 		private OrderRepo orderRepo;
-		//@Autowired
-		private List<Seat> seats;
 
-		private List <Order> orders;
+		@Autowired
+		private SeatRepo seatRepo;
+
+
+		private List<Schedule> scheduleList;
+		private List<Seat> seatList;
+
+		private List <Order> orderList;
+
+		private List<Reservation> reservationList;
 		@Override
 		public void run(String... args) throws Exception {
+
+			scheduleList = new ArrayList<>();
+			orderList = new ArrayList<>();
+			reservationList = new ArrayList<>();
+			seatList = new ArrayList<>();
+
 
 			var user1 = new User();
 			user1.setUsername("Guy Temp");
@@ -58,17 +70,30 @@ public class BookingSystemApplication {
 			var movie = new Movie();
 			movie.setName("arielle");
 			movie.setYearOfRelease(2020);
-			movie.setSchedules(schedules);
+			movie.setSchedules(scheduleList);
 			movieRepo.save(movie);
-
 
 
 			var hall1 = new Hall();
 			hall1.setHallName("animation");
 			hallRepo.save(hall1);
 
-			var order1 = new Order();
-			order1.setUser(user1);
+			var seat1 = new Seat();
+			seat1.setSeatNumber(4);
+			seat1.setHall(hall1);
+			seatRepo.save(seat1);
+
+			var seat2 = new Seat();
+			seat2.setSeatNumber(5);
+			seat2.setHall(hall1);
+			seatRepo.save(seat2);
+
+			seatList.add(seat1);
+			seatList.add(seat2);
+
+			hall1.setSeats(seatList);
+			hallRepo.save(hall1);
+
 
 
 			var schedule2 = new Schedule();
@@ -77,10 +102,33 @@ public class BookingSystemApplication {
 			schedule2.setHall(hall1);
 			scheduleRepo.save(schedule2);
 
+			var schedule1 = new Schedule();
+			schedule1.setMovie(movie);
+			schedule1.setPlayingTime(LocalDateTime.of(2023,8,29,21,00));
+			schedule1.setHall(hall1);
+			scheduleRepo.save(schedule1);
 
-			schedules = new ArrayList<>();
-			orders = new ArrayList<>();
-			schedules.add(schedule2);
+
+
+
+			var reservation1 = new Reservation();
+			reservation1.setTime(schedule1);
+			reservation1.setSeatList(seatList);
+
+			reservationRepo.save(reservation1);
+			reservationList.add(reservation1);
+
+			var order1 = new Order();
+			order1.setUser(user1);
+			order1.setReservation(reservationList);
+			order1.setOrderNumber(1);
+			orderRepo.save(order1);
+
+
+			scheduleList.add(schedule2);
+			scheduleList.add(schedule1);
+
+
 
 		}
 

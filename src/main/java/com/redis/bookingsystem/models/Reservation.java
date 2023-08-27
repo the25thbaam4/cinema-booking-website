@@ -18,7 +18,7 @@ public class Reservation {
     private Order order;
 
     @OneToMany
-    @JoinColumn(name = "seat_id")
+    @JoinColumn(name = "seat_list")
     private List <Seat> seatList;
 
     @ManyToOne

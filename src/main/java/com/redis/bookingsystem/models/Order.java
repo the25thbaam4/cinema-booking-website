@@ -7,6 +7,7 @@ import java.util.List;
 
 
 @Entity @Data
+@Table(name = "order_table")
 public class Order {
 
     @Id
@@ -20,6 +21,7 @@ public class Order {
     private List<Reservation> reservation;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 }

@@ -17,8 +17,7 @@ public class Hall {
 
     private String hallName;
 
-    @OneToMany
-    @JoinColumn(name = "seat_id")
+    @OneToMany(mappedBy = "hall")
     private List<Seat> seats;
 
     @OneToMany

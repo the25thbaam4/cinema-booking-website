@@ -18,8 +18,7 @@ public class User {
     private String username;
     private int age;
 
-    @OneToMany
-    @JoinColumn(name = "order_id")
+    @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
 

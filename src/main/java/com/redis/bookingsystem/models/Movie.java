@@ -18,7 +18,7 @@ public class Movie {
         private Integer yearOfRelease;
 
         @OneToMany
-        @JoinColumn(name = "timetable_id")
+        @JoinColumn(name = "schedules")
         private List<Schedule> schedules;
 
 
