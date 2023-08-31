@@ -2,6 +2,8 @@ package com.redis.bookingsystem.controller;
 
 import com.redis.bookingsystem.models.Schedule;
 import com.redis.bookingsystem.repositories.ScheduleRepo;
+import com.redis.bookingsystem.service.ScheduleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,19 +15,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/schedule")
 public class ScheduleController {
-    private ScheduleRepo scheduleRepo;
-    public ScheduleController(ScheduleRepo scheduleRepo){
-        this.scheduleRepo = scheduleRepo;
-    }
+    @Autowired
+    private ScheduleService scheduleService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Schedule> getScheduleById(@PathVariable("/id") Long id){
-        var schedule = scheduleRepo.findById(id);
-        return ResponseEntity.of(schedule);
+    public List<Schedule> getSchedule(@PathVariable Long id){
+        return scheduleService.getScheduleDetails(id);
     }
 
-    @GetMapping
-    public List<Schedule> getAllSchedule(){
-        return scheduleRepo.findAll();
-    }
+
 }
