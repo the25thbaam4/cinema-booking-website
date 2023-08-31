@@ -18,13 +18,15 @@ public class Schedule {
 
 
     @ManyToOne
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
-    @OneToMany
-    @JoinColumn(name = "reservation_id")
+    @OneToMany(mappedBy = "schedule")
+    //@JoinColumn(name = "reservation_id")
     private List<Reservation> reservation;
 
     @ManyToOne
+    @JoinColumn(name = "hall_id")
     private Hall hall;
 
 }

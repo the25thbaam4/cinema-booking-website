@@ -2,6 +2,7 @@ package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,14 +15,18 @@ public class Reservation {
     private long user_reservation;
     private long reservationNumber;
 
+    @ToString.Exclude
     @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
 
     @OneToMany
-    @JoinColumn(name = "seat_list")
+    @JoinColumn(name = "seat")
     private List <Seat> seatList;
 
+    @ToString.Exclude
     @ManyToOne
-    private Schedule time;
+    @JoinColumn(name = "schedule_id")
+    private Schedule schedule;
 
 }

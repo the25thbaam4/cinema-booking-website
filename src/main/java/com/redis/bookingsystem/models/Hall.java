@@ -20,8 +20,7 @@ public class Hall {
     @OneToMany(mappedBy = "hall")
     private List<Seat> seats;
 
-    @OneToMany
-    @JoinColumn(name = "timetable_id")
+    @OneToMany(mappedBy = "hall")
     private List<Schedule> schedules;
 
 

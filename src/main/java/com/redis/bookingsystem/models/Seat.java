@@ -23,6 +23,7 @@ public class Seat {
      private Hall hall;
 
      @ManyToOne
+     @JoinColumn(name = "reservation_id")
      private Reservation reservation;
 
 /*

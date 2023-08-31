@@ -109,10 +109,11 @@ public class BookingSystemApplication {
 			scheduleRepo.save(schedule1);
 
 
-
+			scheduleList.add(schedule2);
+			scheduleList.add(schedule1);
 
 			var reservation1 = new Reservation();
-			reservation1.setTime(schedule1);
+			reservation1.setSchedule(schedule1);
 			reservation1.setSeatList(seatList);
 
 			reservationRepo.save(reservation1);
@@ -121,13 +122,8 @@ public class BookingSystemApplication {
 			var order1 = new Order();
 			order1.setUser(user1);
 			order1.setReservation(reservationList);
-			order1.setOrderNumber(1);
+
 			orderRepo.save(order1);
-
-
-			scheduleList.add(schedule2);
-			scheduleList.add(schedule1);
-
 
 
 		}

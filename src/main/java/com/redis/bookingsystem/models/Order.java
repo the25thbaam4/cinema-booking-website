@@ -2,6 +2,7 @@ package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,12 +15,12 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id", nullable = false)
     private long id;
-    private long orderNumber;
 
     @OneToMany
     @JoinColumn(name = "reservation_id")
     private List<Reservation> reservation;
 
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

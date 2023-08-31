@@ -17,8 +17,7 @@ public class Movie {
         private String name;
         private Integer yearOfRelease;
 
-        @OneToMany
-        @JoinColumn(name = "schedules")
+        @OneToMany(mappedBy = "movie")
         private List<Schedule> schedules;
 
 
