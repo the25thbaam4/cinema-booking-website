@@ -3,6 +3,7 @@ package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -17,11 +18,12 @@ public class Seat {
     private int seatNumber;
 
 
-
+     @ToString.Exclude
      @ManyToOne
      @JoinColumn(name = "hall_id")
      private Hall hall;
 
+     @ToString.Exclude
      @ManyToOne
      @JoinColumn(name = "reservation_id")
      private Reservation reservation;
