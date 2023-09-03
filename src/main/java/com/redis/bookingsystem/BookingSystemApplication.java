@@ -21,7 +21,7 @@ public class BookingSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookingSystemApplication.class, args);
 	}
-
+/*
 	@Component
 	class DummyDataGenerator implements CommandLineRunner {
 
@@ -129,6 +129,8 @@ public class BookingSystemApplication {
 		}
 
 	}
+
+ */
 }
 
 

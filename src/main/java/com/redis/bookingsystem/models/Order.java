@@ -16,13 +16,15 @@ public class Order {
     @Column(name = "order_id", nullable = false)
     private long id;
 
-    @OneToMany
-    @JoinColumn(name = "reservation_id")
-    private List<Reservation> reservation;
-
     @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany
+    @JoinColumn(name = "reservation_id")
+    private List<Reservation> reservation;
+
+
 
 }
