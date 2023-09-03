@@ -12,7 +12,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_reservation", nullable = false)
-    private long user_reservation;
+    private Long id;
     private long reservationNumber;
 
     @ToString.Exclude

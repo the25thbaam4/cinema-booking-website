@@ -1,37 +1,36 @@
 package com.redis.bookingsystem.controller;
 
 import com.redis.bookingsystem.models.Movie;
+import com.redis.bookingsystem.models.Schedule;
 import com.redis.bookingsystem.repositories.MovieRepo;
+import com.redis.bookingsystem.service.MovieService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/movie")
 public class MovieController {
 
-    private final MovieRepo movieRepo;
+@Autowired
+private MovieService movieService;
 
-
-    public MovieController(MovieRepo movieRepo) {
-        this.movieRepo = movieRepo;
-    }
 
     @GetMapping("/{id}")
-
-    public ResponseEntity<Movie> getMovieById(@PathVariable("id") Long id)
+    public List<Movie> getMovieById(@PathVariable("id") Long id)
     {
-        var movie = movieRepo.findById(id);
-        return ResponseEntity.of(movie);
+        return movieService.getMovieDetails(id);
     }
 
-    @GetMapping("/")
-
-    public List<Movie> getAllMovies(){
-
-        return movieRepo.findAll();
+    @PostMapping("/set-movie")
+    public ResponseEntity<Movie> saveUser(@RequestBody Movie movie) {
+        movieService.saveMovie(movie);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 
 
 

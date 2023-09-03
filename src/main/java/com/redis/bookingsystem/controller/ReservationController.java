@@ -1,29 +1,30 @@
 package com.redis.bookingsystem.controller;
 
+import com.redis.bookingsystem.models.Movie;
 import com.redis.bookingsystem.models.Reservation;
 import com.redis.bookingsystem.repositories.ReservationRepo;
+import com.redis.bookingsystem.service.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/reservations")
+@RequestMapping("/reservation")
 public class ReservationController {
-    private ReservationRepo reservationRepo;
+    @Autowired
+    private ReservationService reservationService;
 
-        public ReservationController(ReservationRepo reservationRepo){
-            this.reservationRepo = reservationRepo;
-        }
-        @GetMapping("id")
-        public ResponseEntity<Reservation> getReservationById(@PathVariable("id") Long id){
-            var reservation = reservationRepo.findById(id);
-            return ResponseEntity.of(reservation);
+        @GetMapping("/{id}")
+        public List<Reservation> getReservationById(@PathVariable("id") Long id ){
+            return reservationService.getReservationDetails(id);
         }
 
-        @GetMapping("/")
-        public List<Reservation> getAllReservations(){
-            return reservationRepo.findAll();
+        @PostMapping("/set-reservation")
+        public ResponseEntity<Reservation> saveReservation(@RequestBody Reservation reservation){
+            reservationService.saveReservation(reservation);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
-
 }

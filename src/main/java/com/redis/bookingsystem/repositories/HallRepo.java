@@ -3,5 +3,9 @@ package com.redis.bookingsystem.repositories;
 import com.redis.bookingsystem.models.Hall;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface HallRepo extends JpaRepository <Hall,Integer>{}
+import java.util.List;
+
+public interface HallRepo extends JpaRepository <Hall,Integer>{
+    List<Hall> findAllById(Integer hallId);
+}
 

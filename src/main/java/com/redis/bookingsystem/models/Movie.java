@@ -13,7 +13,7 @@ public class Movie {
         private Long id;
 
         private String name;
-        private Integer yearOfRelease;
+        private int yearOfRelease;
 
         @OneToMany(mappedBy = "movie")
         private List<Schedule> schedules;
