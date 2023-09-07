@@ -10,3 +10,5 @@ A simple backend application with
 ## Dependencies
 1. Java min. version 17
 
+
+- [x] fix the problem with GET results... 
