@@ -1,8 +1,6 @@
 package com.redis.bookingsystem.controller;
 
 import com.redis.bookingsystem.models.Movie;
-import com.redis.bookingsystem.models.Schedule;
-import com.redis.bookingsystem.repositories.MovieRepo;
 import com.redis.bookingsystem.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
