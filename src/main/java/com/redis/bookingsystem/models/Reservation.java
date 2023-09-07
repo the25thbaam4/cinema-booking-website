@@ -20,6 +20,7 @@ public class Reservation {
     @JoinColumn(name = "order_id")
     private Order order;
 
+    @ToString.Exclude
     @OneToMany
     @JoinColumn(name = "seat")
     private List <Seat> seatList;

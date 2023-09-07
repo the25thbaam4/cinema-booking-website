@@ -1,12 +1,12 @@
 package com.redis.bookingsystem.service;
 
 import com.redis.bookingsystem.models.Hall;
-import com.redis.bookingsystem.models.Movie;
 import com.redis.bookingsystem.repositories.HallRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class HallService {
     @Autowired
     private HallRepo hallRepo;

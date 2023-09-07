@@ -1,7 +1,9 @@
 package com.redis.bookingsystem.service;
 
 import com.redis.bookingsystem.models.Order;
+import com.redis.bookingsystem.models.Seat;
 import com.redis.bookingsystem.repositories.OrderRepo;
+import com.redis.bookingsystem.repositories.SeatRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,20 +12,21 @@ import java.util.List;
 @Service
 public class SeatService {
     @Autowired
-    private OrderRepo orderRepo;
+    private SeatRepo seatRepo;
 
-    public void saveOrder(Order order){
-        orderRepo.save(order);
+    public void saveSeat(Seat seat){
+        seatRepo.save(seat);
     }
 
-    public List<Order> getOrderDetails(Long orderId){
-        if (orderId != null){
-            return orderRepo.findAllById(orderId);
+    public List<Seat> getSeatDetails( Long seatId){
+        if (seatId != null){
+            return seatRepo.findAllById(seatId);
         }
-        return orderRepo.findAll();
+        return seatRepo.findAll();
     }
-    public void deleteMovie(Long movieId){
-        orderRepo.deleteById(movieId);
+    public void deleteSeat(Long seatId){
+        seatRepo.deleteById(seatId);
     }
+
 
 }

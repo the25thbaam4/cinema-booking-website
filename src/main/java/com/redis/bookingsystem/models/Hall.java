@@ -18,9 +18,11 @@ public class Hall {
 
     private String hallName;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "hall")
     private List<Seat> seats;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "hall")
     private List<Schedule> schedules;
 

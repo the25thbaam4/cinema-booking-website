@@ -20,6 +20,7 @@ public class User {
     private String username;
     private int age;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 

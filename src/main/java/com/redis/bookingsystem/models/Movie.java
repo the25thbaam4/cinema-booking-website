@@ -2,6 +2,8 @@ package com.redis.bookingsystem.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
+
 import java.util.List;
 
 @Entity @Data
@@ -14,7 +16,7 @@ public class Movie {
 
         private String name;
         private int yearOfRelease;
-
+        @ToString.Exclude
         @OneToMany(mappedBy = "movie")
         private List<Schedule> schedules;
 

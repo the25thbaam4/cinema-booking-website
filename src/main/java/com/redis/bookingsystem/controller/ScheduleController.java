@@ -26,7 +26,7 @@ public class ScheduleController {
 
 
     @PostMapping("/set-schedule")
-    public ResponseEntity<Schedule> saveUser(@RequestBody Schedule schedule) {
+    public ResponseEntity<Schedule> saveSchedule(@RequestBody Schedule schedule) {
         scheduleService.saveSchedule(schedule);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

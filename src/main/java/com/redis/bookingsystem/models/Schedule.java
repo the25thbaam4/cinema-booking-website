@@ -21,7 +21,7 @@ public class Schedule {
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
-   // @ToString.Exclude
+    @ToString.Exclude
     @OneToMany(mappedBy = "schedule")
     //@JoinColumn(name = "reservation_id")
     private List<Reservation> reservation;

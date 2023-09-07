@@ -21,6 +21,7 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ToString.Exclude
     @OneToMany
     @JoinColumn(name = "reservation_id")
     private List<Reservation> reservation;
