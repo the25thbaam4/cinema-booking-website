@@ -17,15 +17,13 @@ public class Order {
     private long id;
 
     @ToString.Exclude
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
     @ToString.Exclude
-    @OneToMany
-    @JoinColumn(name = "reservation_id")
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reservations")
     private List<Reservation> reservation;
-
-
 
 }

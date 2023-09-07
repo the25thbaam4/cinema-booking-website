@@ -17,14 +17,14 @@ public class OrderService {
         orderRepo.save(order);
     }
 
-    public List<Order> getMovieDetails(Long orderId){
+    public List<Order> getOrderDetails(Long orderId){
         if (orderId != null){
             return orderRepo.findAllById(orderId);
         }
         return orderRepo.findAll();
     }
-    public void deleteOrder(Long movieId){
-        orderRepo.deleteById(movieId);
+    public void deleteOrder(Long orderId){
+        orderRepo.deleteById(orderId);
     }
 
 }

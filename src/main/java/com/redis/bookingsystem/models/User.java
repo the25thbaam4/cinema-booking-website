@@ -21,7 +21,7 @@ public class User {
     private int age;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Order> orders;
 
 
