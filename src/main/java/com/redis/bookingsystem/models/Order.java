@@ -19,13 +19,13 @@ public class Order {
 
     //@JsonIgnore
     @ToString.Exclude
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
     //@JsonIgnore
     @ToString.Exclude
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany//(fetch = FetchType.LAZY)
     @JoinColumn(name = "reservations")
     private List<Reservation> reservation;
 

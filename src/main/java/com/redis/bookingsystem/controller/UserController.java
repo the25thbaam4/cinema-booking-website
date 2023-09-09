@@ -46,16 +46,5 @@ public class UserController {
         return new ResponseEntity<>(createdUserDTO, HttpStatus.CREATED);
     }
 
-/*
-
-    @PostMapping("/save")
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
-        userService.saveUser(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
-
- */
-
 
 }

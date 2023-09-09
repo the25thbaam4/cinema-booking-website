@@ -15,14 +15,16 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
+    public User createUser(User user) {
+        return userRepo.save(user);
+    }
+
     public UserDTO getUserById(Long userId){
         User user = userRepo.findById(userId).orElse(null);
         return UserMapper.convertToUserDTO(user);
     }
 
-    public User createUser(User user) {
-        return userRepo.save(user);
-    }
+
 /*
     public void saveUser (User user){
         userRepo.save(user);
