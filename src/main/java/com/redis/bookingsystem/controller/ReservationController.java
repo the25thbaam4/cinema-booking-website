@@ -1,5 +1,7 @@
 package com.redis.bookingsystem.controller;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.redis.bookingsystem.models.Reservation;
 import com.redis.bookingsystem.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/reservation")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
