@@ -7,13 +7,14 @@ import com.redis.bookingsystem.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserService {
 
     @Autowired
     private UserRepo userRepo;
+
+   // @Autowired
+   // private UserMapper userMapper;
 
     public User createUser(User user) {
         return userRepo.save(user);

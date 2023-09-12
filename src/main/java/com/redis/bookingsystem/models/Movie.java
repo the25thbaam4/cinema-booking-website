@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -16,6 +17,8 @@ public class Movie {
 
         private String name;
         private int yearOfRelease;
+
+        @JsonIgnore
         @ToString.Exclude
         @OneToMany(mappedBy = "movie")
         private List<Schedule> schedules;

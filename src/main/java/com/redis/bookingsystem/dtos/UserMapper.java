@@ -1,7 +1,11 @@
 package com.redis.bookingsystem.dtos;
 
+import com.redis.bookingsystem.models.Order;
 import com.redis.bookingsystem.models.User;
 import lombok.Data;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class UserMapper {
@@ -15,6 +19,10 @@ public class UserMapper {
         userDTO.setAge(user.getAge());
         userDTO.setUsername(user.getUsername());
 
+
+           userDTO.setOrders(user.getOrders());
+
+
         return userDTO;
     }
 
@@ -25,6 +33,7 @@ public class UserMapper {
         user.setAge(userDTO.getAge());
         user.setId(userDTO.getId());
         user.setUsername(userDTO.getUsername());
+        user.setOrders(userDTO.getOrders());
 
         return user;
     }

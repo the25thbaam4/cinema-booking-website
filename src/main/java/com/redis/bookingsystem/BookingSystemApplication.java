@@ -1,18 +1,7 @@
 package com.redis.bookingsystem;
 
-import com.redis.bookingsystem.models.*;
-import com.redis.bookingsystem.repositories.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-
-import com.redis.bookingsystem.models.User;
 
 
 @SpringBootApplication

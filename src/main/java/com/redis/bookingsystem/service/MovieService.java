@@ -4,6 +4,7 @@ import com.redis.bookingsystem.models.Movie;
 import com.redis.bookingsystem.repositories.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service

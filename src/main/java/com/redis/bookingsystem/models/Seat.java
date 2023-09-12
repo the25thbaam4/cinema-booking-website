@@ -1,6 +1,7 @@
 package com.redis.bookingsystem.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -16,6 +17,7 @@ public class Seat {
 
     @Column(name = "seat_number")
     private int seatNumber;
+    private boolean isOccupied;
 
 
      @ToString.Exclude
@@ -23,6 +25,7 @@ public class Seat {
      @JoinColumn(name = "hall_id")
      private Hall hall;
 
+     @JsonIgnore
      @ToString.Exclude
      @ManyToOne
      @JoinColumn(name = "reservation_id")

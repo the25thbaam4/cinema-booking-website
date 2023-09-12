@@ -17,7 +17,7 @@ public class Order {
     @Column(name = "order_id", nullable = false)
     private long id;
 
-    //@JsonIgnore
+    @JsonIgnore
     @ToString.Exclude
     @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -25,8 +25,8 @@ public class Order {
 
     //@JsonIgnore
     @ToString.Exclude
-    @OneToMany//(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reservations")
+    @OneToMany(mappedBy = "order")
+    //@JoinColumn(name = "reservations")
     private List<Reservation> reservation;
 
 }

@@ -1,8 +1,6 @@
 package com.redis.bookingsystem.service;
 
-import com.redis.bookingsystem.models.Order;
 import com.redis.bookingsystem.models.Seat;
-import com.redis.bookingsystem.repositories.OrderRepo;
 import com.redis.bookingsystem.repositories.SeatRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

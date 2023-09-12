@@ -1,6 +1,7 @@
 package com.redis.bookingsystem.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -18,10 +19,12 @@ public class Hall {
 
     private String hallName;
 
+    @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "hall")
     private List<Seat> seats;
 
+    @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "hall")
     private List<Schedule> schedules;
