@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface HallRepo extends JpaRepository <Hall,Integer>{
-    List<Hall> findAllById(Integer hallId);
+public interface HallRepo extends JpaRepository <Hall,Long>{
+    List<Hall> findAllById(Long hallId);
 }
 

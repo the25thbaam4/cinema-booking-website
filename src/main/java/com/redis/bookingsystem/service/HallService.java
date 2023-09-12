@@ -19,7 +19,6 @@ public class HallService {
     private SeatRepo seatRepo;
 
    public void initHallsWithSeats(){
-     //  List<String> hallNames = Arrays.asList(, "Comedy", "Romance", "Horror", "Sci-Fi");
        Map<Integer, String> hallNames = new HashMap<>();
        hallNames.put(1, "Action");
        hallNames.put(2, "Comedy");
@@ -43,9 +42,18 @@ public class HallService {
 
    }
 
-    public List<Hall> getHallDetails(){
+    public List<Hall> getAllHalls(){
 
         return hallRepo.findAll();
+    }
+
+    public List<Hall> getHallById(Long hallId){
+       if (hallId != null){
+           return hallRepo.findAllById(hallId);
+        }
+       else {
+           return hallRepo.findAll();
+       }
     }
 
 

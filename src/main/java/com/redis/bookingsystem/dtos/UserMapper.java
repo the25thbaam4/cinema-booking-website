@@ -1,11 +1,7 @@
 package com.redis.bookingsystem.dtos;
 
-import com.redis.bookingsystem.models.Order;
 import com.redis.bookingsystem.models.User;
 import lombok.Data;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class UserMapper {

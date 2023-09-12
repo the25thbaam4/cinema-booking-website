@@ -15,7 +15,7 @@ public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hall_id", nullable = false)
-    private int id;
+    private long id;
 
     private String hallName;
 

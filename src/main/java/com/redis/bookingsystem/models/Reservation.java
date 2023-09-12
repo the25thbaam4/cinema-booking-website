@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import java.util.List;
 

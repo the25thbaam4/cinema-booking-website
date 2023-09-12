@@ -31,11 +31,4 @@ public class Seat {
      @JoinColumn(name = "reservation_id")
      private Reservation reservation;
 
-/*
-    @AssertTrue(message = "column number must be between 1 and 10")
-    public boolean isValidRowNumber() {
-        return seatColumn >= 0 && seatColumn <= 10;
-    }
-
-*/
 }

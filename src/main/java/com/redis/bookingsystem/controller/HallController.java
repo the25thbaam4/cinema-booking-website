@@ -4,6 +4,7 @@ import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.service.HallService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,13 @@ public class HallController {
 
    @GetMapping
     public List<Hall> getAllHalls(){
-       return hallService.getHallDetails();
+       return hallService.getAllHalls();
    }
+
+   @GetMapping("/{id}")
+    public List<Hall> getHallById(@PathVariable long id){
+       return hallService.getHallById(id);
+    }
 
 
 }
