@@ -1,11 +1,18 @@
 package com.redis.bookingsystem;
 
+import com.redis.bookingsystem.service.HallService;
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
 public class BookingSystemApplication {
+	private final HallService hallService;
+
+	public BookingSystemApplication(HallService hallService) {
+		this.hallService = hallService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookingSystemApplication.class, args);
@@ -120,6 +127,10 @@ public class BookingSystemApplication {
 	}
 
  */
+@PostConstruct
+public void init() {
+	hallService.initHallsWithSeats();
+}
 
 }
 

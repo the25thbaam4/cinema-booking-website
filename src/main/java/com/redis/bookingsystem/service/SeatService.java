@@ -12,9 +12,7 @@ public class SeatService {
     @Autowired
     private SeatRepo seatRepo;
 
-    public void saveSeat(Seat seat){
-        seatRepo.save(seat);
-    }
+
 
     public List<Seat> getSeatDetails( Long seatId){
         if (seatId != null){
@@ -22,9 +20,9 @@ public class SeatService {
         }
         return seatRepo.findAll();
     }
-    public void deleteSeat(Long seatId){
-        seatRepo.deleteById(seatId);
-    }
+
 
 
 }
+
+
