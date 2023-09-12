@@ -1,7 +1,7 @@
 package com.redis.bookingsystem.repositories;
-import com.redis.bookingsystem.models.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.redis.bookingsystem.models.Schedule;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 

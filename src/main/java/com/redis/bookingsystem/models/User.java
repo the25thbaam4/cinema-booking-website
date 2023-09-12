@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -22,6 +23,7 @@ public class User {
 
     @ToString.Exclude
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Order> orders;
 
 
