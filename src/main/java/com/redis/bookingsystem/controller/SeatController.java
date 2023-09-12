@@ -17,7 +17,10 @@ public class SeatController {
     @Autowired
     private SeatService seatService;
 
-
+    @GetMapping
+    public List<Seat> getAllSeats(){
+        return seatService.getAllSeats();
+    }
 
     @GetMapping("/{id}")
     public List<Seat> getSeat(@PathVariable Long id){

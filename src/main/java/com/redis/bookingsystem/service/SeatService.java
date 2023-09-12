@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.service;
 
+import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.models.Seat;
 import com.redis.bookingsystem.repositories.SeatRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,16 @@ public class SeatService {
         return seatRepo.findAll();
     }
 
+    public boolean isSeatAlreadyReserved(Long seatId) {
+        Seat seat = seatRepo.findSeatById(seatId);
 
+        return seat.getReservation() != null;
+    }
+
+    public List<Seat> getAllSeats(){
+
+        return seatRepo.findAll();
+    }
 
 }
 

@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.service;
 
+import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.models.Schedule;
 import com.redis.bookingsystem.repositories.ScheduleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,10 @@ public class ScheduleService {
     @Autowired
     private ScheduleRepo scheduleRepo;
 
-    public void saveSchedule(Schedule schedule){
-        scheduleRepo.save(schedule);
-    }
+    public List<Schedule> getAllSchedules(){
 
+        return scheduleRepo.findAll();
+    }
     public List<Schedule> getScheduleDetails(Long scheduleId){
         if (scheduleId != null){
             return scheduleRepo.findAllById(scheduleId);
@@ -26,8 +27,5 @@ public class ScheduleService {
         }
     }
 
-    public void deleteSchedule(Long scheduleId){
-        scheduleRepo.deleteById(scheduleId);
-    }
 
 }

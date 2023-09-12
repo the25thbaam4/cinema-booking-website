@@ -24,7 +24,11 @@ private MovieService movieService;
         return movieService.getMovieDetails(id);
     }
 
+    @GetMapping
+    public List<Movie> getAllMovies(){
+        return movieService.getAllMovies();
 
+    }
 
 
 

@@ -1,5 +1,6 @@
 package com.redis.bookingsystem.service;
 
+import com.redis.bookingsystem.models.Hall;
 import com.redis.bookingsystem.models.Movie;
 import com.redis.bookingsystem.models.Schedule;
 import com.redis.bookingsystem.repositories.HallRepo;
@@ -64,6 +65,11 @@ public class MovieService {
         if (movieId != null) {
             return movieRepo.findAllById(movieId);
         }
+        return movieRepo.findAll();
+    }
+
+    public List<Movie> getAllMovies(){
+
         return movieRepo.findAll();
     }
 

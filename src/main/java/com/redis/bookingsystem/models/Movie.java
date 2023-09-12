@@ -2,15 +2,13 @@ package com.redis.bookingsystem.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Entity @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Movie {
 
         @Id

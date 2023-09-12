@@ -2,10 +2,7 @@ package com.redis.bookingsystem.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,6 +10,7 @@ import java.util.List;
 @Entity
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Schedule {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "schedule_id", nullable = false)
