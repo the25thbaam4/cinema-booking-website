@@ -22,11 +22,14 @@ public class SeatService {
         return seatRepo.findAll();
     }
 
-    public boolean isSeatAlreadyReserved(Long seatId) {
+   public boolean isSeatAlreadyReserved(Long seatId) {
         Seat seat = seatRepo.findSeatById(seatId);
 
         return seat.getReservation() != null;
     }
+
+
+
 
     public List<Seat> getAllSeats(){
 

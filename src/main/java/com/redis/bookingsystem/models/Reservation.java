@@ -15,7 +15,7 @@ public class Reservation {
     @Column(name = "reservation_id", nullable = false)
     private Long id;
 
-    //@UniqueElements
+
     private long reservationNumber;
 
     @JsonIgnore
@@ -24,13 +24,10 @@ public class Reservation {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    //@JsonIgnore
-    @ToString.Exclude
     @OneToMany(mappedBy = "reservation")
-    //@JoinColumn(name = "seat_id")
     private List <Seat> seats;
 
-   // @JsonIgnore
+
     @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "schedule_id")

@@ -40,13 +40,13 @@ public class MovieService {
         List<Schedule> schedules = new ArrayList<>();
         long hallNumber = 0;
         for (Movie movie : movies) {
-            Schedule schedule1 = new Schedule(LocalDateTime.of(2023, 9, 15, 15, 0));
+            Schedule schedule1 = new Schedule(LocalDateTime.of(2023, 10, 15, 15, 0));
             schedule1.setMovie(movie);
 
             schedule1.setHall(hallRepo.getReferenceById(1 + hallNumber));
             schedules.add(schedule1);
 
-            Schedule schedule2 = new Schedule(LocalDateTime.of(2023, 9, 15, 18, 0));
+            Schedule schedule2 = new Schedule(LocalDateTime.of(2023, 10, 15, 18, 0));
             schedule2.setMovie(movie);
             schedule2.setHall(hallRepo.getReferenceById(1 + hallNumber));
 
