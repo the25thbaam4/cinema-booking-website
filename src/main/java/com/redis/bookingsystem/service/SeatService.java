@@ -31,6 +31,8 @@ public class SeatService {
 
 
 
+
+
     public List<Seat> getAllSeats(){
 
         return seatRepo.findAll();

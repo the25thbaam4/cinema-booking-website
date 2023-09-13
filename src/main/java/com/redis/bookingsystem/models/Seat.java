@@ -27,7 +27,7 @@ public class Seat {
     @JoinColumn(name = "hall_id")
     private Hall hall;
 
-    //@JsonIgnore
+    @JsonIgnore
   //  @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "reservation_id")

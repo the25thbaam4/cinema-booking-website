@@ -13,8 +13,6 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
 
-    //@Autowired
-   // private OrderMapper orderMapper;
 
     public Order createOrder(Order order){
 
@@ -26,16 +24,5 @@ public class OrderService {
         return OrderMapper.convertToOrderDTO(order);
     }
 
-  /*  public List<Order> getOrderDetails(Long orderId){
-        if (orderId != null){
-            return orderRepo.findAllById(orderId);
-        }
-        return orderRepo.findAll();
-    }
-    public void deleteOrder(Long orderId){
-        orderRepo.deleteById(orderId);
-    }
 
-
-   */
 }

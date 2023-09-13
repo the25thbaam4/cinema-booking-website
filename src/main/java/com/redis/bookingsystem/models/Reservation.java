@@ -24,6 +24,7 @@ public class Reservation {
     @JoinColumn(name = "order_id")
     private Order order;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "reservation")
     private List <Seat> seats;
 

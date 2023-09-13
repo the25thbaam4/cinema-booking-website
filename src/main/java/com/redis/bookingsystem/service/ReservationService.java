@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -24,8 +25,8 @@ public class ReservationService {
     @Autowired
     private SeatRepo seatRepo;
 
-    public Reservation saveReservation(Reservation reservation){
-     /*  List<Long> reservedSeatIDs = new ArrayList<>();
+   /* public Reservation saveReservation(Reservation reservation){
+       List<Long> reservedSeatIDs = new ArrayList<>();
 
         for (Long seatId : reservedSeatIDs){
             if (seatService.isSeatAlreadyReserved(seatId))
@@ -37,12 +38,36 @@ public class ReservationService {
             reservedSeat.setId(seat);
             seatRepo.save(reservedSeat);
 
+            seatRepo.getReferenceById(seat);
+            reservation.setSeats(Arrays.asList(reservedSeat));
         }
 
-      */
+
+
         reservationRepo.save(reservation);
         return reservation;
     }
+
+    */
+
+    public Reservation saveReservation(Reservation reservation, List<Long> reservedSeatIDs) {
+        List<Seat> reservedSeats = new ArrayList<>();
+
+        for (Long seatId : reservedSeatIDs) {
+            Seat seat = seatRepo.findById(seatId).orElse(null);
+            if (seat != null && !seat.isOccupied()) {
+                seat.setOccupied(true);
+                seat.setReservation(reservation);
+                reservedSeats.add(seat);
+            }
+        }
+
+        reservation.setSeats(reservedSeats);
+        reservationRepo.save(reservation);
+
+        return reservation;
+    }
+
 
     public ReservationDTO getReservationById(Long reservationId){
         Reservation reservation = reservationRepo.findById(reservationId).orElse(null);
