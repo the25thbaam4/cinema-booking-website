@@ -2,12 +2,13 @@ package com.redis.bookingsystem.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Entity @Data
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class Movie {
 
         @Id
@@ -15,7 +16,9 @@ public class Movie {
         @Column(name = "movie_id", nullable = false)
         private Long id;
 
+        @NonNull
         private String name;
+        @NonNull
         private int yearOfRelease;
 
         @JsonIgnore

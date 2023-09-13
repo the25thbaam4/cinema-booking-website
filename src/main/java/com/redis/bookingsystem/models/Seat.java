@@ -8,10 +8,11 @@ import lombok.ToString;
 
 @Entity
 @Data
+@Table(name = "seat")
 public class Seat {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "seat_id", nullable = false)
     private Long id;
 
@@ -20,22 +21,16 @@ public class Seat {
     private boolean isOccupied;
 
 
-     @ToString.Exclude
-     @ManyToOne
-     @JoinColumn(name = "hall_id")
-     private Hall hall;
+    @JsonIgnore
+    @ToString.Exclude
+    @ManyToOne
+    @JoinColumn(name = "hall_id")
+    private Hall hall;
 
-     @JsonIgnore
-     @ToString.Exclude
-     @ManyToOne
-     @JoinColumn(name = "reservation_id")
-     private Reservation reservation;
+    @JsonIgnore
+  //  @ToString.Exclude
+    @ManyToOne
+    @JoinColumn(name = "reservation_id")
+    private Reservation reservation;
 
-/*
-    @AssertTrue(message = "column number must be between 1 and 10")
-    public boolean isValidRowNumber() {
-        return seatColumn >= 0 && seatColumn <= 10;
-    }
-
-*/
 }

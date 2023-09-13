@@ -15,8 +15,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-   // @Autowired
-   // private OrderMapper orderMapper;
+
 
     @GetMapping("/{id}")
     public ResponseEntity<OrderDTO> getOrderById(@PathVariable Long id) {
@@ -25,7 +24,7 @@ public class OrderController {
         if (orderDTO != null) {
             return new ResponseEntity<>(orderDTO, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(orderDTO, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>( HttpStatus.NOT_FOUND);
         }
 
     }

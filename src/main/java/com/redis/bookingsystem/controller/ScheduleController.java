@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/schedule")
+@RequestMapping("/api/schedule")
 public class ScheduleController {
     @Autowired
     private ScheduleService scheduleService;
@@ -22,10 +22,9 @@ public class ScheduleController {
         return scheduleService.getScheduleDetails(id);
     }
 
-
-    @PostMapping("/set-schedule")
-    public ResponseEntity<Schedule> saveSchedule(@RequestBody Schedule schedule) {
-        scheduleService.saveSchedule(schedule);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @GetMapping
+    public List<Schedule> getAllSchedules(){
+       return scheduleService.getAllSchedules();
     }
+
 }
