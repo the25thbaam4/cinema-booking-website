@@ -4,7 +4,8 @@ h1{
 
 
 body{
-    background-color: lightpink;
+    background-color: black;
+    text-color: white;
 }
 .row {
   display: flex;
