@@ -1,18 +1,164 @@
-h1{
-    text-align: center;
-}
-
-
 body{
-    background-color: black;
-    text-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: teal;
 }
-.row {
+
+.movieSlider{
+width: 800px;
+height: 500px;
+border-radius: 20px;
+
+overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
   display: flex;
 }
 
-.column {
-  flex: 33.33%;
-  padding: 5px;
+.slides input{
+  display: none;
 }
 
+.slide{
+  width: 20%;
+  transition: 2s;
+
+}
+
+.slide img{
+  width: 800px;
+  height: 500px;
+}
+
+
+.navigation-manual{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+
+}
+
+.manual-btn:hover{
+  background: #40D3DC;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+#radio5:checked ~ .first{
+  margin-left: -80%;
+}
+
+
+.navigation-auto{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-auto div{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #40D3DC;
+}
+
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #40D3DC;
+}
+
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #40D3DC;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #40D3DC;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+  background: #40D3DC;
+}
+
+
+
+h1{
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  font-size: 30px;
+ 
+}
+
+a:hover {
+  color: #FF5733; }
+
+  .navigation {
+   
+    font-family: Arial, sans-serif;
+    text-align: left; 
+    position: fixed;
+    top: 34%;
+    left: 0;
+    height: 100%; 
+    
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: large;
+  }
+
+  li {
+    margin: 10px 0;
+  }
+  
+
+  
