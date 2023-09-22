@@ -19,7 +19,7 @@ public class Hall {
 
     private String hallName;
 
-    @JsonIgnore
+   // @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "hall")
     private List<Seat> seats;

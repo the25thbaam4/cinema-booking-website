@@ -19,4 +19,9 @@ public class IndexController {
     }
 
 
+    @GetMapping("/halls")
+    public ModelAndView halls(){
+        return new ModelAndView("halls");
+    }
+
 }
