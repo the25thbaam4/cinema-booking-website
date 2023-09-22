@@ -28,6 +28,9 @@ private MovieService movieService;
     public List<Movie> getAllMovies(){
         return movieService.getAllMovies();
 
+        //TODO fetch in JS, var and DTs
+
+
     }
 
 
